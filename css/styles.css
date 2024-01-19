@@ -1,0 +1,134 @@
+@font-face {
+  font-family: "Work Sans";
+  src: url("../assets/fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Work Sans", sans-serif;
+  background-color: #f8edff;
+  background-image: url("../assets/images/background-pattern-desktop.svg");
+  background-repeat: repeat-x;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 570px) {
+  body {
+    background-image: url("../assets/images/background-pattern-mobile.svg");
+    background-repeat: repeat-x;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffff;
+  width: 600px;
+  padding: 40px;
+  margin: 24px;
+  gap: 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  border-radius: 16px;
+  box-shadow: 0px 32px 56px 0px rgba(80, 0, 118, 0.1);
+}
+
+body .container .card_header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 24px;
+  color: rgb(48, 21, 52);
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+body .container .card_content {
+  display: flex;  
+  flex-direction: column;
+}
+
+.card_content ul li {
+  border-bottom: 2px solid rgb(248, 238, 255);
+  padding-bottom: 24px;
+  padding-top: 24px;
+  justify-content: center;
+  align-items: start;
+}
+
+.card_content .title {  
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card_content .hidden {
+  color: rgb(139, 105, 144);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.hidden.active {
+  margin-top: 24px;
+  max-height: 100px;
+}
+
+.card_content ul li .title .icon {  
+  background-image: url("../assets/images/icon-plus.svg");
+  background-repeat: no-repeat;  
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.card_content ul li .title .icon.active {
+  background-image: url("../assets/images/icon-minus.svg");
+}
